@@ -47,7 +47,7 @@ public class GroovyAnswerTest {
         //given
         GroovyObject g = mock(SomeGroovyClass.class);
         g.getMetaClass();
-        Invocation getMetaClass = this.getLastInvocation();
+        Invocation getMetaClass = lastInvocation();
 
         //when
         Object result = groovyAnswer.answer(getMetaClass);
@@ -63,19 +63,37 @@ public class GroovyAnswerTest {
 
     @Test
     public void shouldDelegateAnythingOtherThanAGetMetaClassCall() throws Throwable {
-        //given
-        NonGroovyClass g = mock(NonGroovyClass.class);
-        g.someMethod();
-        Invocation callSomeMethod = this.getLastInvocation();
+        NonGroovyClass m = mock(NonGroovyClass.class);
+        m.someMethod();
 
-        //when
-        Object result = groovyAnswer.answer(callSomeMethod);
-
-        //then
-        assertThat(result, is(returnValueFromDelegate));
+        assertThat(groovyAnswer.answer(lastInvocation()), is(returnValueFromDelegate));
     }
 
-    private Invocation getLastInvocation() {
+    interface HasGetMetaClass extends GroovyObject {
+        MetaClass getMetaClass(String redHerring);
+    }
+
+    interface HasGetMetaClassButIsNotAGroovyObject {
+        MetaClass getMetaClass();
+    }
+
+    @Test
+    public void shouldNotAnswerGetMetaClassIfItDoesNotHaveTheExpectedSignature() throws Throwable {
+        HasGetMetaClass m = mock(HasGetMetaClass.class);
+        m.getMetaClass("but not the regular Groovy getMetaClass");
+
+        assertThat(groovyAnswer.answer(lastInvocation()), is(returnValueFromDelegate));
+    }
+
+    @Test
+    public void shouldNotAnswerGetMetaClassIfTheObjectIsNotAGroovyObject() throws Throwable {
+        HasGetMetaClassButIsNotAGroovyObject m = mock(HasGetMetaClassButIsNotAGroovyObject.class);
+        m.getMetaClass();
+
+        assertThat(groovyAnswer.answer(lastInvocation()), is(returnValueFromDelegate));
+    }
+
+    private Invocation lastInvocation() {
         return new MockitoCore().getLastInvocation();
     }
 }
