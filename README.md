@@ -35,6 +35,12 @@ Override your Mockito configuration, by creating a new class called
 and it should look like this:
 
 ```java
+package org.mockito.configuration;
+
+import com.cyrusinnovation.mockitogroovysupport.GroovyMockitoConfiguration;
+
+public class MockitoConfiguration extends GroovyMockitoConfiguration {
+}
 ```
 
 From then on, everything should just work. If it doesn't, let us know.
