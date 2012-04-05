@@ -45,6 +45,11 @@ public class MockitoConfiguration extends GroovyMockitoConfiguration {
 
 From then on, everything should just work. If it doesn't, let us know.
 
+Where can I get it?
+===================
+
+Go to the [Downloads tab](https://github.com/cyrusinnovation/mockito-groovy-support/downloads) and download the jar.
+
 Who made this?
 ==============
 
