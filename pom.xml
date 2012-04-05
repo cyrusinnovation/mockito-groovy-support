@@ -10,6 +10,29 @@
 
     <name>Mockito Groovy Support</name>
 
+    <developers>
+        <developer>
+            <name>Moss Collum</name>
+            <email>mcollum@cyrusinnovation.com</email>
+            <organization>Cyrus Innovation</organization>
+            <organizationUrl>http://www.cyrusinnovation.com/</organizationUrl>
+        </developer>
+        <developer>
+            <name>Laura Dean</name>
+            <email>lgdean@cyrusinnovation.com</email>
+            <organization>Cyrus Innovation</organization>
+            <organizationUrl>http://www.cyrusinnovation.com/</organizationUrl>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <properties>
         <groovy-version>1.8.6</groovy-version>
     </properties>
