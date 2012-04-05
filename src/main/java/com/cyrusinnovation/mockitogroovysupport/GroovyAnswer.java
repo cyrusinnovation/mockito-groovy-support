@@ -7,11 +7,6 @@ import org.mockito.stubbing.Answer;
 
 import java.lang.reflect.Method;
 
-/**
- * User: cyrus
- * Date: 4/5/12
- * Time: 2:18 PM
- */
 public class GroovyAnswer implements Answer<Object> {
     private Answer<Object> delegate;
 

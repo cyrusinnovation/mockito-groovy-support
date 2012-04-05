@@ -20,11 +20,6 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-/**
- * User: cyrus
- * Date: 4/5/12
- * Time: 2:22 PM
- */
 @RunWith(MockitoJUnitRunner.class)
 public class GroovyAnswerTest {
     @Mock
