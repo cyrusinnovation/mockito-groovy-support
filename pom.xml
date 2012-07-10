@@ -6,7 +6,7 @@
 
     <groupId>com.cyrusinnovation.mockito-groovy-support</groupId>
     <artifactId>mockito-groovy-support</artifactId>
-    <version>1.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>Mockito Groovy Support</name>
 
