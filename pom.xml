@@ -3,12 +3,28 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.cyrusinnovation.mockito-groovy-support</groupId>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    <groupId>com.cyrusinnovation</groupId>
     <artifactId>mockito-groovy-support</artifactId>
+    <packaging>jar</packaging>
     <version>1.0.1-SNAPSHOT</version>
 
     <name>Mockito Groovy Support</name>
+    <url>https://www.github.com/cyrusinnovation/mockito-groovy-support</url>
+    <organization>
+        <name>Cyrus Innovation</name>
+        <url>http://www.cyrusinnovation.com/</url>
+    </organization>
+    <scm>
+        <url>https://github.com/cyrusinnovation/mockito-groovy-support</url>
+        <connection>scm:git:git@github.com:cyrusinnovation/mockito-groovy-support.git</connection>
+        <developerConnection>scm:git:git@github.com:cyrusinnovation/mockito-groovy-support.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 
     <developers>
         <developer>
@@ -16,12 +32,14 @@
             <email>mcollum@cyrusinnovation.com</email>
             <organization>Cyrus Innovation</organization>
             <organizationUrl>http://www.cyrusinnovation.com/</organizationUrl>
+            <timezone>America/New_York</timezone>
         </developer>
         <developer>
             <name>Laura Dean</name>
             <email>lgdean@cyrusinnovation.com</email>
             <organization>Cyrus Innovation</organization>
             <organizationUrl>http://www.cyrusinnovation.com/</organizationUrl>
+            <timezone>America/New_York</timezone>
         </developer>
     </developers>
 
