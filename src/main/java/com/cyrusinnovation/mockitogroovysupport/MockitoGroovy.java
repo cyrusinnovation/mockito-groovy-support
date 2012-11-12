@@ -5,13 +5,21 @@ import org.mockito.Mockito;
 import org.mockito.cglib.proxy.Factory;
 import org.mockito.internal.creation.MethodInterceptorFilter;
 import org.mockito.internal.creation.MockSettingsImpl;
+import org.mockito.stubbing.Answer;
 
 public class MockitoGroovy {
     public static <T> T gmock(Class<T> classToMock) {
-        MockSettingsImpl mockSettings = (MockSettingsImpl) Mockito.withSettings().defaultAnswer(new GroovyAnswer(Mockito.RETURNS_DEFAULTS));
+        return gmock(classToMock, (MockSettingsImpl) Mockito.withSettings());
+    }
+
+    public static <T> T gmock(Class<T> classToMock, Answer defaultAnswer) {
+        return gmock(classToMock, (MockSettingsImpl) Mockito.withSettings().defaultAnswer(defaultAnswer));
+    }
+
+    public static <T> T gmock(Class<T> classToMock, MockSettingsImpl mockSettings) {
         T mock = Mockito.mock(classToMock, mockSettings);
 
-        injectGroovyInterceptor((Factory)mock, mockSettings);
+        injectGroovyInterceptor((Factory) mock, mockSettings);
 
         return mock;
     }

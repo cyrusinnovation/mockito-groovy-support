@@ -23,11 +23,21 @@ class MockingAGroovyClassFromGroovyTest {
         }
     }
 
+    static interface SomeOtherGroovyInterface {
+        void foo()
+    }
+
     private SomeGroovyClass mock
 
     @Before
     void createMock() {
         mock = gmock(SomeGroovyClass)
+    }
+
+    @Test
+    void shouldSupportExtraInterfaces() {
+        def mockWithExtraInterface = gmock(SomeGroovyClass, withSettings().extraInterfaces(SomeOtherGroovyInterface))
+        assert mockWithExtraInterface instanceof SomeOtherGroovyInterface
     }
 
     @Test
