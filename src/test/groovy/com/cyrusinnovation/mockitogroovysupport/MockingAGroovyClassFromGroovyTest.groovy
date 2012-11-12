@@ -1,14 +1,12 @@
 package com.cyrusinnovation.mockitogroovysupport
 
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Test
 
 import static com.cyrusinnovation.mockitogroovysupport.MockitoGroovy.gmock
 import static org.junit.Assert.assertEquals
 import static org.mockito.Matchers.anyString
-import static org.mockito.Mockito.verify
-import static org.mockito.Mockito.when
+import static org.mockito.Mockito.*
 
 class MockingAGroovyClassFromGroovyTest {
     static class SomeGroovyClass {
@@ -19,6 +17,14 @@ class MockingAGroovyClassFromGroovyTest {
         String methodTakingArgument(String argument) {
             return "You said: $argument"
         }
+
+        String methodThatShouldntBeCalled() {
+            return "Oh no!"
+        }
+    }
+
+    static interface SomeOtherGroovyInterface {
+        void foo()
     }
 
     private SomeGroovyClass mock
@@ -29,16 +35,22 @@ class MockingAGroovyClassFromGroovyTest {
     }
 
     @Test
+    void shouldSupportExtraInterfaces() {
+        def mockWithExtraInterface = gmock(SomeGroovyClass, withSettings().extraInterfaces(SomeOtherGroovyInterface))
+        assert mockWithExtraInterface instanceof SomeOtherGroovyInterface
+    }
+
+    @Test
     void shouldBeAbleToStubAMethodOnAGroovyClass() {
         when(mock.greeting()).thenReturn("My Fancy Greeting")
         assertEquals("My Fancy Greeting", mock.greeting())
     }
 
     @Test
-    @Ignore // See Issue #2
     void shouldBeAbleToVerifyAMethodOnAGroovyClass() {
         mock.greeting()
         verify(mock).greeting()
+        verify(mock, never()).methodThatShouldntBeCalled()
     }
 
     @Test
@@ -51,7 +63,6 @@ class MockingAGroovyClassFromGroovyTest {
     }
 
     @Test
-    @Ignore // See Issue #1
     void shouldBeAbleToStubAMethodUsingAnArgumentMatcher() {
         when(mock.methodTakingArgument(anyString())).thenReturn("ANY STRING")
         assertEquals("ANY STRING", mock.methodTakingArgument("whatever"))
