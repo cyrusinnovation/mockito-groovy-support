@@ -10,40 +10,9 @@ http://code.google.com/p/mockito/issues/detail?id=303
 How do you use it?
 ==================
 
-There are two ways.
-
-The less helpful way that requires less setup.
-----------------------------------------------
-
-Where you would have said:
-
-```java
-MyClass mockObject = Mockito.mock(MyClass.class)
-```
-
-now you say:
-
-```java
-MyClass mockObject = MockitoGroovy.gmock(MyClass.class)
-```
-
-The more helpful way that takes more setup.
--------------------------------------------
-
-Override your Mockito configuration, by creating a new class called
-`org.mockito.configuration.MockitoConfiguration`. It has to have that exact name, including the package,
-and it should look like this:
-
-```java
-package org.mockito.configuration;
-
-import com.cyrusinnovation.mockitogroovysupport.GroovyMockitoConfiguration;
-
-public class MockitoConfiguration extends GroovyMockitoConfiguration {
-}
-```
-
-From then on, everything should just work. If it doesn't, let us know.
+1) Include mockito-groovy-support on your classpath.
+2) Use Mockito from Groovy as you normally would.
+3) Everything should just work. If it doesn't, let us know.
 
 Where can I get it?
 ===================

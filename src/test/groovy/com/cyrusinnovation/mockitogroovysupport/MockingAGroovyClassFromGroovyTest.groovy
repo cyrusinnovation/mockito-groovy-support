@@ -40,7 +40,6 @@ class MockingAGroovyClassFromGroovyTest {
     }
 
     @Test
-    @Ignore // WIP for integrate-using-mockmaker-extension-point branch
     void shouldBeAbleToStubAMethodOnAGroovyClass() {
         when(mock.greeting()).thenReturn("My Fancy Greeting")
         assertEquals("My Fancy Greeting", mock.greeting())
@@ -55,7 +54,6 @@ class MockingAGroovyClassFromGroovyTest {
     }
 
     @Test
-    @Ignore // WIP for integrate-using-mockmaker-extension-point branch
     void shouldBeAbleToStubAMethodWithDifferentArguments() {
         when(mock.methodTakingArgument("foo")).thenReturn("FOO")
         when(mock.methodTakingArgument("bar")).thenReturn("BAR")
