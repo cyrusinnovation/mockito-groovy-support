@@ -1,24 +1,18 @@
 package com.cyrusinnovation.mockitogroovysupport;
 
-import groovy.lang.GroovyObject;
-import groovy.lang.MetaClass;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.internal.MockitoCore;
-import org.mockito.internal.invocation.Invocation;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.mockito.stubbing.Answer;
+import groovy.lang.*;
+import org.junit.*;
+import org.junit.runner.*;
+import org.mockito.*;
+import org.mockito.internal.*;
+import org.mockito.invocation.*;
+import org.mockito.runners.*;
+import org.mockito.stubbing.*;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GroovyAnswerTest {

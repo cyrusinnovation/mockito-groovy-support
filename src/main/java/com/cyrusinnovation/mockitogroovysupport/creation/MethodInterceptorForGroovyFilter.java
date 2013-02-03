@@ -1,19 +1,18 @@
 package com.cyrusinnovation.mockitogroovysupport.creation;
 
-import com.cyrusinnovation.mockitogroovysupport.util.ObjectMethodsGroovyGuru;
-import groovy.lang.GroovySystem;
-import org.mockito.cglib.proxy.MethodProxy;
-import org.mockito.internal.MockitoInvocationHandler;
-import org.mockito.internal.creation.MethodInterceptorFilter;
-import org.mockito.internal.creation.MockSettingsImpl;
+import com.cyrusinnovation.mockitogroovysupport.util.*;
+import groovy.lang.*;
+import org.mockito.cglib.proxy.*;
+import org.mockito.internal.*;
+import org.mockito.internal.creation.*;
 
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
 
 public class MethodInterceptorForGroovyFilter extends MethodInterceptorFilter {
 
     private ObjectMethodsGroovyGuru objectMethodsGuru = new ObjectMethodsGroovyGuru();
 
-    public MethodInterceptorForGroovyFilter(MockitoInvocationHandler handler, MockSettingsImpl mockSettings) {
+    public MethodInterceptorForGroovyFilter(InternalMockHandler handler, MockSettingsImpl mockSettings) {
         super(handler, mockSettings);
     }
 

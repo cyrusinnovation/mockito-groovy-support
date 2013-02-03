@@ -3,6 +3,7 @@ package com.cyrusinnovation.mockitogroovysupport;
 import com.cyrusinnovation.mockitogroovysupport.creation.MethodInterceptorForGroovyFilter;
 import org.mockito.Mockito;
 import org.mockito.cglib.proxy.Factory;
+import org.mockito.internal.*;
 import org.mockito.internal.creation.MethodInterceptorFilter;
 import org.mockito.internal.creation.MockSettingsImpl;
 import org.mockito.stubbing.Answer;
@@ -26,9 +27,10 @@ public class MockitoGroovy {
 
     private static void injectGroovyInterceptor(Factory mock, MockSettingsImpl mockSettings) {
         MethodInterceptorFilter callback = (MethodInterceptorFilter) mock.getCallback(0);
+        InternalMockHandler mockHandler = (InternalMockHandler) callback.getHandler();
 
         // Index of the method interceptor is always 0, see MockUtil.resetMock()
-        mock.setCallback(0, new MethodInterceptorForGroovyFilter(callback.getHandler(), mockSettings));
+        mock.setCallback(0, new MethodInterceptorForGroovyFilter(mockHandler, mockSettings));
     }
 
 
