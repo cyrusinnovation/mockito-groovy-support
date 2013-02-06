@@ -50,7 +50,7 @@ values. We're working on making it work more completely.
 Where can I get it?
 ===================
 
-Go to the [Downloads tab](https://github.com/cyrusinnovation/mockito-groovy-support/downloads) and download the jar.
+[Download the jar](http://m14m.net/mockito-groovy-support-1.1.jar). The new version will be up on Maven when I figure out how.
 
 Who made this?
 ==============
