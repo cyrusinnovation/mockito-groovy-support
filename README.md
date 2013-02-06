@@ -12,8 +12,8 @@ How do you use it?
 
 There are two ways.
 
-The less helpful way that requires less setup.
-----------------------------------------------
+The preferred way.
+------------------
 
 Where you would have said:
 
@@ -27,8 +27,8 @@ now you say:
 MyClass mockObject = MockitoGroovy.gmock(MyClass.class)
 ```
 
-The more helpful way that takes more setup.
--------------------------------------------
+The more seamless way that doesn't work for everything.
+-------------------------------------------------------
 
 Override your Mockito configuration, by creating a new class called
 `org.mockito.configuration.MockitoConfiguration`. It has to have that exact name, including the package,
@@ -43,7 +43,9 @@ public class MockitoConfiguration extends GroovyMockitoConfiguration {
 }
 ```
 
-From then on, everything should just work. If it doesn't, let us know.
+This will make Mockito transparently handle Groovy for basic stubbing. However, it doesn't (yet)
+work for verifying method calls, or for stubs that use matchers rather than expected argument
+values. We're working on making it work more completely.
 
 Where can I get it?
 ===================
