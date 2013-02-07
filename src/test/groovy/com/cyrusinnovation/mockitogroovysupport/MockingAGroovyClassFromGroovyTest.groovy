@@ -46,7 +46,6 @@ class MockingAGroovyClassFromGroovyTest {
     }
 
     @Test
-    @Ignore // WIP for integrate-using-mockmaker-extension-point branch
     void shouldBeAbleToVerifyAMethodOnAGroovyClass() {
         mock.greeting()
         verify(mock).greeting()
@@ -63,7 +62,6 @@ class MockingAGroovyClassFromGroovyTest {
     }
 
     @Test
-    @Ignore // WIP for integrate-using-mockmaker-extension-point branch
     void shouldBeAbleToStubAMethodUsingAnArgumentMatcher() {
         when(mock.methodTakingArgument(anyString())).thenReturn("ANY STRING")
         assertEquals("ANY STRING", mock.methodTakingArgument("whatever"))

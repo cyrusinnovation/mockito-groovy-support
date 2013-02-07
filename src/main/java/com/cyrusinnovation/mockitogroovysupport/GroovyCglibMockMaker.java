@@ -7,12 +7,13 @@ import org.mockito.internal.creation.*;
 import org.mockito.internal.creation.jmock.*;
 import org.mockito.invocation.*;
 import org.mockito.mock.*;
+import org.mockito.plugins.*;
 
 /**
  * Variant of Mockito's built-in CglibMockMaker, except that it uses a Groovy-friendly
  * version of MethodInterceptorFilter.
  */
-public class GroovyCglibMockMaker {
+public class GroovyCglibMockMaker implements MockMaker {
 
     public <T> T createMock(MockCreationSettings<T> settings, MockHandler handler) {
         InternalMockHandler mockitoHandler = cast(handler);
