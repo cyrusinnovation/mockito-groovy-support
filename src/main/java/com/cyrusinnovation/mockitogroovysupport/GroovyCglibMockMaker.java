@@ -17,7 +17,7 @@ public class GroovyCglibMockMaker {
     public <T> T createMock(MockCreationSettings<T> settings, MockHandler handler) {
         InternalMockHandler mockitoHandler = cast(handler);
         return ClassImposterizer.INSTANCE.imposterise(
-                new MethodInterceptorFilter(mockitoHandler, settings), settings.getTypeToMock(), settings.getExtraInterfaces());
+                new MethodInterceptorForGroovyFilter(mockitoHandler, settings), settings.getTypeToMock(), settings.getExtraInterfaces());
     }
 
     private InternalMockHandler cast(MockHandler handler) {
