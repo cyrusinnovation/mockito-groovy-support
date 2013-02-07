@@ -30,7 +30,7 @@ public class GroovyCglibMockMaker implements MockMaker {
     }
 
     public void resetMock(Object mock, MockHandler newHandler, MockCreationSettings settings) {
-        ((Factory) mock).setCallback(0, new MethodInterceptorFilter(cast(newHandler), settings));
+        ((Factory) mock).setCallback(0, new MethodInterceptorForGroovyFilter(cast(newHandler), settings));
     }
 
     public MockHandler getHandler(Object mock) {

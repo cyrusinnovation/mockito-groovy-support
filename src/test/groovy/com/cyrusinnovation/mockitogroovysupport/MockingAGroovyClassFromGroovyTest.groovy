@@ -59,4 +59,14 @@ class MockingAGroovyClassFromGroovyTest {
         when(mock.methodTakingArgument(anyString())).thenReturn("ANY STRING")
         assertEquals("ANY STRING", mock.methodTakingArgument("whatever"))
     }
+
+    @Test void "should reset mocks correctly"() {
+        mock.methodThatShouldntBeCalled()
+
+        reset(mock)
+        mock.greeting()
+
+        verify(mock).greeting()
+        verify(mock, never()).methodThatShouldntBeCalled()
+    }
 }
