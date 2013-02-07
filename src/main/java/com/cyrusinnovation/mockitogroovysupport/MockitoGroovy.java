@@ -1,6 +1,5 @@
 package com.cyrusinnovation.mockitogroovysupport;
 
-import com.cyrusinnovation.mockitogroovysupport.creation.MethodInterceptorForGroovyFilter;
 import org.mockito.Mockito;
 import org.mockito.cglib.proxy.Factory;
 import org.mockito.internal.*;

@@ -1,4 +1,4 @@
-package com.cyrusinnovation.mockitogroovysupport.util;
+package com.cyrusinnovation.mockitogroovysupport;
 
 import org.mockito.internal.util.ObjectMethodsGuru;
 

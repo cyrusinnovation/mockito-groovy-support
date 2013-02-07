@@ -1,6 +1,5 @@
-package com.cyrusinnovation.mockitogroovysupport.creation;
+package com.cyrusinnovation.mockitogroovysupport;
 
-import com.cyrusinnovation.mockitogroovysupport.util.*;
 import groovy.lang.*;
 import org.mockito.cglib.proxy.*;
 import org.mockito.internal.*;
