@@ -17,11 +17,22 @@ How do you use it?
 Where can I get it?
 ===================
 
-[Download the jar](http://m14m.net/mockito-groovy-support-1.1.jar). The new version will be up on Maven when I figure out how.
+[Download the jar](http://m14m.net/mockito-groovy-support-1.2.jar). The new version will be up on
+Maven when I figure out how.
 
 Who made this?
 ==============
 
-Moss Collum and Laura Dean of [Cyrus Innovation](http://www.cyrusinnovation.com/).
+Moss Collum and Laura Dean of [Cyrus Innovation](http://www.cyrusinnovation.com/) wrote the original
+version. [Jostein Gogstad](https://github.com/gogstad) contributed the code to support verification
+and argument matchers.
 
 Email us at: mockito-groovy-developers@cyruslists.com
+
+Changelog
+=========
+
+* 1.2: Work seamlessly with Mockito using MockMaker extension point.
+* 1.1: Support verification and argument matchers.
+* 1.0.1: Made project available through Maven.
+* 1.0: Support basic stubbing of Groovy classes.
