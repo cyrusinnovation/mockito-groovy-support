@@ -1,7 +1,6 @@
 package com.cyrusinnovation.mockitogroovysupport
-import org.junit.Before
-import org.junit.Ignore
-import org.junit.Test
+
+import org.junit.*
 
 import static org.junit.Assert.assertEquals
 import static org.mockito.Matchers.anyString
@@ -28,32 +27,27 @@ class MockingAGroovyClassFromGroovyTest {
 
     private SomeGroovyClass mock
 
-    @Before
-    void createMock() {
+    @Before void createMock() {
         mock = mock(SomeGroovyClass)
     }
 
-    @Test
-    void shouldSupportExtraInterfaces() {
-        def mockWithExtraInterface = mock(SomeGroovyClass, withSettings().extraInterfaces(SomeOtherGroovyInterface))
-        assert mockWithExtraInterface instanceof SomeOtherGroovyInterface
-    }
-
-    @Test
-    void shouldBeAbleToStubAMethodOnAGroovyClass() {
+    @Test void "should stub methods on Groovy classes"() {
         when(mock.greeting()).thenReturn("My Fancy Greeting")
         assertEquals("My Fancy Greeting", mock.greeting())
     }
 
-    @Test
-    void shouldBeAbleToVerifyAMethodOnAGroovyClass() {
+    @Test void "should verify methods on Groovy classes"() {
         mock.greeting()
         verify(mock).greeting()
         verify(mock, never()).methodThatShouldntBeCalled()
     }
 
-    @Test
-    void shouldBeAbleToStubAMethodWithDifferentArguments() {
+    @Test void "should support extra interfaces"() {
+        def mockWithExtraInterface = mock(SomeGroovyClass, withSettings().extraInterfaces(SomeOtherGroovyInterface))
+        assert mockWithExtraInterface instanceof SomeOtherGroovyInterface
+    }
+
+    @Test void "should distinguish stubs with different arguments"() {
         when(mock.methodTakingArgument("foo")).thenReturn("FOO")
         when(mock.methodTakingArgument("bar")).thenReturn("BAR")
 
@@ -61,8 +55,7 @@ class MockingAGroovyClassFromGroovyTest {
         assertEquals("BAR", mock.methodTakingArgument("bar"))
     }
 
-    @Test
-    void shouldBeAbleToStubAMethodUsingAnArgumentMatcher() {
+    @Test void "should handle stubs that use argument matchers"() {
         when(mock.methodTakingArgument(anyString())).thenReturn("ANY STRING")
         assertEquals("ANY STRING", mock.methodTakingArgument("whatever"))
     }
