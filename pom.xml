@@ -9,7 +9,7 @@
     <groupId>com.cyrusinnovation</groupId>
     <artifactId>mockito-groovy-support</artifactId>
     <packaging>jar</packaging>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.3</version>
 
     <name>Mockito Groovy Support</name>
     <description>A fix to allow you to use Mockito with Groovy</description>
@@ -22,7 +22,7 @@
         <url>https://github.com/cyrusinnovation/mockito-groovy-support</url>
         <connection>scm:git:git@github.com:cyrusinnovation/mockito-groovy-support.git</connection>
         <developerConnection>scm:git:git@github.com:cyrusinnovation/mockito-groovy-support.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>mockito-groovy-support-1.3</tag>
     </scm>
 
     <developers>
