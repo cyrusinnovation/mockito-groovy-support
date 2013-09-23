@@ -32,6 +32,7 @@ Email us at: mockito-groovy-developers@cyruslists.com
 Changelog
 =========
 
+* 1.3: Fix a bug in working with groovy subclasses; thanks to Shawn Garner and Tim Andersen for this fix.
 * 1.2: Work seamlessly with Mockito using MockMaker extension point.
 * 1.1: Support verification and argument matchers.
 * 1.0.1: Made project available through Maven.
