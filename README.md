@@ -17,8 +17,8 @@ How do you use it?
 Where can I get it?
 ===================
 
-[Download the jar](http://m14m.net/mockito-groovy-support-1.2.jar). The new version will be up on
-Maven when I figure out how.
+Download the jar from the "releases" tab here in github,
+or use the Maven central repository.  Enjoy!
 
 Who made this?
 ==============
@@ -32,7 +32,7 @@ Email us at: mockito-groovy-developers@cyruslists.com
 Changelog
 =========
 
-* 1.3: Fix a bug in working with groovy subclasses; thanks to Shawn Garner and Tim Andersen for this fix.
+* 1.3: Fix a bug in working with groovy subclasses; thanks to Shawn Garner and [Tim Andersen](http://timandersen.net/) for this fix.
 * 1.2: Work seamlessly with Mockito using MockMaker extension point.
 * 1.1: Support verification and argument matchers.
 * 1.0.1: Made project available through Maven.
