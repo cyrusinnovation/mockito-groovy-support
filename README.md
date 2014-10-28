@@ -10,9 +10,9 @@ http://code.google.com/p/mockito/issues/detail?id=303
 How do you use it?
 ==================
 
-1) Include mockito-groovy-support on your classpath.
-2) Use Mockito from Groovy as you normally would.
-3) Everything should just work. If it doesn't, let us know.
+1. Include mockito-groovy-support on your classpath.
+2. Use Mockito from Groovy as you normally would.
+3. Everything should just work. If it doesn't, let us know.
 
 Where can I get it?
 ===================
