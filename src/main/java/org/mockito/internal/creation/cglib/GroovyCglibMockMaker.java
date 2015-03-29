@@ -1,10 +1,9 @@
-package com.cyrusinnovation.mockitogroovysupport;
+package org.mockito.internal.creation.cglib;
 
 import org.mockito.cglib.proxy.*;
 import org.mockito.exceptions.base.*;
 import org.mockito.internal.*;
-import org.mockito.internal.creation.*;
-import org.mockito.internal.creation.jmock.*;
+import org.mockito.internal.creation.instance.*;
 import org.mockito.invocation.*;
 import org.mockito.mock.*;
 import org.mockito.plugins.*;
@@ -17,8 +16,10 @@ public class GroovyCglibMockMaker implements MockMaker {
 
     public <T> T createMock(MockCreationSettings<T> settings, MockHandler handler) {
         InternalMockHandler mockitoHandler = cast(handler);
-        return ClassImposterizer.INSTANCE.imposterise(
-                new MethodInterceptorForGroovyFilter(mockitoHandler, settings), settings.getTypeToMock(), settings.getExtraInterfaces());
+        new AcrossJVMSerializationFeature().enableSerializationAcrossJVM(settings);
+        return new ClassImposterizer(new InstantiatorProvider().getInstantiator(settings)).imposterise(
+           new MethodInterceptorForGroovyFilter(mockitoHandler, settings), settings.getTypeToMock(),
+           settings.getExtraInterfaces());
     }
 
     private InternalMockHandler cast(MockHandler handler) {

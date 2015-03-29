@@ -1,1 +1,1 @@
-com.cyrusinnovation.mockitogroovysupport.GroovyCglibMockMaker
+org.mockito.internal.creation.cglib.GroovyCglibMockMaker
