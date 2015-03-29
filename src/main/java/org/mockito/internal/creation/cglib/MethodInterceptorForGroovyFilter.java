@@ -1,9 +1,9 @@
-package com.cyrusinnovation.mockitogroovysupport;
+package org.mockito.internal.creation.cglib;
 
+import com.cyrusinnovation.mockitogroovysupport.ObjectMethodsGroovyGuru;
 import groovy.lang.*;
 import org.mockito.cglib.proxy.*;
 import org.mockito.internal.*;
-import org.mockito.internal.creation.*;
 import org.mockito.mock.*;
 
 import java.lang.reflect.*;
